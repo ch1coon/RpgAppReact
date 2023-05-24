@@ -12,7 +12,10 @@
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
-      "**/*"
+      "data/**/*",
+      "data/races.json",
+      "data/backgrounds.json",
+      "assets/**/*"      
     ],
     "ios": {
       "supportsTablet": true

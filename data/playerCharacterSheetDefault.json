@@ -1,0 +1,130 @@
+{
+    "characterSheet": [{
+        "characterName": "",
+        "class": "",
+        "level": "",
+        "background": "",
+        "playerName": "",
+        "race": "",
+        "alignment": [        
+                "",
+                " "
+        ],
+        "experiencePoints": 0,
+        "abilityScores": {
+        "strength": {
+            "value": 8,
+            "modifier":0
+        },
+        "dexterity": {
+            "value": 8,
+            "modifier":0
+        },
+        "constitution": {
+            "value": 8,
+            "modifier":0
+        },
+        "intelligence": {
+            "value": 8,
+            "modifier":0
+        },
+        "wisdom": {
+            "value": 8,
+            "modifier":0
+        },
+        "charisma": {
+            "value": 8,
+            "modifier":0
+        }
+        },
+        "inspiration": false,
+        "proficiencyBonus": 0,
+        "saving_throws": {
+            "strength": {
+            "value": 0,
+            "proficiency": false
+            },
+            "dexterity": {
+            "value": 0,
+            "proficiency": false
+            },
+            "constitution": {
+            "value": 0,
+            "proficiency": false
+            },
+            "intelligence": {
+            "value": 0,
+            "proficiency": false
+            },
+            "wisdom": {
+            "value": 0,
+            "proficiency": false
+            },
+            "charisma": {
+            "value": 0,
+            "proficiency": false
+            }
+        },
+        "skills": {
+        "acrobatics": 0,
+        "animalHandling": 0,
+        "arcana": 0,
+        "athletics": 0,
+        "deception": 0,
+        "history": 0,
+        "insight": 0,
+        "intimidation": 0,
+        "investigation": 0,
+        "medicine": 0,
+        "nature": 0,
+        "perception": 0,
+        "performance": 0,
+        "persuasion": 0,
+        "religion": 0,
+        "sleightOfHand": 0,
+        "stealth": 0,
+        "survival": 0
+        },
+        "passivePerception": 0,
+        "otherProficienciesLanguages": {
+            "type": 0
+        },
+        "armorClass": 0,
+        "initiative": 0,
+        "speed": 0,
+        "hitPoints": {
+        "maximum": 0,
+        "current": 0,
+        "temporary": 0
+        },
+        "hitDice": {
+        "total": 0
+        },
+        "deathSaves": {
+        "successes": 0,
+        "failures": 0
+        },
+        "attacksSpellcasting": [
+        {            
+        }
+        ],
+        "equipment": [
+            {            
+            }
+            ],
+        "currency": {
+        "cp": 0,
+        "sp": 0,
+        "ep": 0,
+        "gp": 0,
+        "pp": 0
+        },
+        "personality_traits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": "",
+        "features_traits": ""
+    }
+    ]
+  }
+
