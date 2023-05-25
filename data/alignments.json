@@ -1,0 +1,66 @@
+{
+   "alignments":[
+      {
+         "name":"Lawful Good",
+         "values":[
+            "L",
+            "G"
+         ]
+      },
+      {
+         "name":"Neutral Good",
+         "values":[
+            "N",
+            "G"
+         ]
+      },
+      {
+         "name":"Chaotic Good",
+         "values":[
+            "C",
+            "G"
+         ]
+      },
+      {
+         "name":"Lawful Neutral",
+         "values":[
+            "L",
+            "N"
+         ]
+      },
+      {
+         "name":"Neutral",
+         "values":[
+            "N"
+         ]
+      },
+      {
+         "name":"Chaotic Neutral",
+         "values":[
+            "C",
+            "N"
+         ]
+      },
+      {
+         "name":"Lawful Evil",
+         "values":[
+            "L",
+            "E"
+         ]
+      },
+      {
+         "name":"Neutral Evil",
+         "values":[
+            "N",
+            "E"
+         ]
+      },
+      {
+         "name":"Chaotic Evil",
+         "values":[
+            "C",
+            "E"
+         ]
+      }
+   ]
+}

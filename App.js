@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
 import defaultCharacterCreationSheet from "./data/playerCharacterSheetDefault.json";
 
+
 const App = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -60,11 +61,13 @@ const App = () => {
         if (Array.isArray(classData.class)) {
           classData.class.forEach((classObj) => {
             const classWithName = classObj.name.toString() + (classObj.source ? ` (${classObj.source})` : '');
-            classOptions.push({ label: classWithName, value: classObj });
+            classOptions.push(classObj);
+            classObj.nameWithSource = classWithName;
           });
         } else {
           const classWithName = classData.class.name.toString();
-          classOptions.push({ label: classWithName, value: classData.class });
+          classOptions.push(classData.class);
+          classData.class.nameWithSource = classWithName;
         }
       });
   
@@ -74,14 +77,6 @@ const App = () => {
     }
   };
   
-  
-  
-  
-  
-  
-  
-  
-
   function carregarOpcoesBackgrounds() {
     const backgroundsData = require("./data/backgrounds.json");
     const backgroundsOptions = new Set();
@@ -118,31 +113,34 @@ const App = () => {
     const racesData = require("./data/races.json");
     const subracesOptions = new Set();
     const subracesMap = {}; // Variável para armazenar as subraças correspondentes ao nome
-
+  
     racesData.race.forEach((race) => {
-      if (race.name.includes(selectedRaceName)) {
+      if (race.name.includes(selectedRaceName) && (!race.traitTags || !race.traitTags.includes("NPC Race"))) {
         const raceOption = `${race.name} (${race.source})`;
         subracesOptions.add(raceOption);
       }
     });
-
+  
     racesData.subrace.forEach((subrace) => {
-      if (subrace.raceName === selectedRaceName) {
-        const subraceName = subrace.name.replace(/\s*\([^)]*\)/g, "").trim();
-        const subraceOption = `${subraceName} (${subrace.source})`;
-
-        if (
-          !subracesMap[subraceName] &&
-          (!subrace.traitTags || !subrace.traitTags.includes("NPC Race"))
-        ) {
-          subracesMap[subraceName] = subrace;
+      if (
+      subrace.raceName === selectedRaceName &&
+      subrace.name &&
+      (!subrace.traitTags || !subrace.traitTags.includes("NPC Race"))
+      ) {
+        const subraceOption = `${subrace.name} (${subrace.source})`;
+  
+        if (!subracesMap[subraceOption]) {
+          subracesMap[subraceOption] = subrace;
           subracesOptions.add(subraceOption);
         }
       }
     });
-
+  
     setSubraceOptions([...subracesOptions]);
   }
+  
+  
+  
 
   function carregarOpcoesTendencias() {
     const alignmentOptions = [
@@ -243,7 +241,7 @@ const App = () => {
     // ... continuar com os outros valores selecionados
 
     // Imprimir o novo objeto JSON no console
-    console.log(JSON.stringify(newCharacterSheet, null, 2));
+    console.log(newCharacterSheet);
   }
 
   return (
@@ -282,14 +280,17 @@ const App = () => {
         disabled={!subraceDropdownEnabled}
       />
 
-      <Text>Classe</Text>
-      <SelectDropdown
-        data={classOptions}
-        onSelect={handleClassChange}
-        defaultButtonText="Classe"
-        buttonStyle={styles.dropdownButton}
-        dropdownStyle={styles.dropdown}
-      />
+<Text>Classe</Text>
+<SelectDropdown
+  data={classOptions}
+  onSelect={handleClassChange}
+  defaultButtonText="Classe"
+  buttonStyle={styles.dropdownButton}
+  dropdownStyle={styles.dropdown}
+  buttonTextAfterSelection={(selectedItem) => selectedItem.nameWithSource}
+  rowTextForSelection={(item) => item.nameWithSource}
+/>
+
 
       <Text>Arquétipo</Text>
       <TextInput
